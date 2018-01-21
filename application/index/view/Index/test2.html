@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>学生信息注册表单</title>
+</head>
+     <style type="text/css"> 
+    label{float: left;width: 80px;line-height:25px;} 
+    form{margin:0px} 
+    input{width: 180px;border:1px solid #808080;} 
+    textarea{width: 250px;height: 150px;} 
+     
+    #sbutton{margin-left: 80px;margin-top: 5px;width:80px;} 
+     .sbuttons{margin-left: 10px; margin-top: 5px;width: 80px;}
+    br{clear: left;} 
+    </style> 
+<body>
+<div id="now" style="display: none;">您未输入用户名！！
+<div><span id="time">3</span>秒后请重新输入！！</div>
+</div>
+    <form action="{:url('index/do_test2')}" method="post" id="form">
+    <label for="user">学生姓名:</label> 
+    <input type="text" id="user" name="username" value="" /><br /> 
+     
+    <label for="email">手机号:</label> 
+    <input type="text" id="tel" name="tel" value="" /><br /> 
+     
+    <input type="button" id="sbutton" onclick="subFunction()" value="提交" />
+     <input type="reset" class="sbuttons" value="重置" />
+    </form> 
+  <script>
+  function subFunction(){
+  	  var user=document.getElementById('user').value;
+	  if(user=='')
+	  {
+	  	document.getElementById('form').style.display='none';
+	  	document.getElementById('now').style.display='inline';
+	  	showTime();
+	  }
+	  else{
+	  	sbuttton=document.getElementById('sbutton');
+	  	sbutton.type="submit";
+	  }
+  }
+  		var t=3;
+		function showTime(){
+			
+			document.getElementById('time').innerHTML=t;
+			t--;
+			if(t==0){
+				location.href='test2';
+			}
+			setTimeout('showTime()',1000);
+		}
+		
+  </script>
+<!-- <div>倒计时<span id="demo">10</span></div>
+<div id='numDiv'>3</div> -->
+</body>
+<!-- <script type="text/javascript">
+var num=3;
+var interval=setInterval(function(){
+if(num==0){
+ clearInterval(interval);
+ alert('欢迎你');
+}
+numDiv.innerHTML=num--;
+},1000);
+</script>  -->
+<!-- <script>
+var t=3;
+function showTime(){
+	t--;
+	document.getElementById('numDiv').innerHTML=t;
+	if(t==0){
+		location.href='http://www.baidu.com';
+	}
+	setTimeout('showTime()',1000);
+}
+showTime();
+</script> -->
+</html>

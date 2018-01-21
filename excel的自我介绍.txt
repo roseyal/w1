@@ -1,0 +1,12 @@
+index/daochu.php   是基本的导出代码可供自己参考
+index/index/login  是tp5的简单登录
+index/index/zhuce  是tp5的简单注册
+index/index/index  是数据库导出成excel格式  export是判断的（自己能看懂的）
+index/index/daoru  是excel文件导入倒数库
+index/index/email  是注册的时候的邮箱验证 reg是判断（你懂得）
+index/index/test2  是失败成功后等待3秒倒计时自动跳转页面
+index/index/qianggou  是结合redis写的抢购（秒杀）
+
+
+抢购自己可以百度在高并发下怎么办？这里只是写了一个简单的？仅供参考
+在根目录有一个多一点的抢购的代码？自己看一下？？？

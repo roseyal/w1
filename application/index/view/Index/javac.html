@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javascript学习</title>
+	<meta charset="utf-8">
+<script type="text/javascript">
+	function dispalyDate(){
+		document.getElementById("demo").innerHTML=Date();
+	}
+</script>
+<!-- <script>
+window.alert(1);
+</script> -->
+</head>
+<body>
+<h1>我是第一个JavaScript的练习</h1>
+<p id="demo">日期的显示地方</p>
+<button type="button" onclick="dispalyDate()">显示日期</button>
+<div>
+<form>
+<input type="text" name="">
+</form>
+<script type="text/javascript">
+document.write('<h1>我是第一个字段</h1>');
+document.write('<h2>我是第二个字段</h2>')
+</script>
+</div>
+<div>
+<button type="button" onclick="alert('提交成功')">提交</button>
+</div>
+<div>
+<div id="demo2">我是能改变的文本内容</div>
+<script type="text/javascript">
+	function myFunction(){
+		x=document.getElementById('demo2');//找到要改变的元素
+		x.innerHTML="hello world"; //改变文本的内容
+	}
+</script>
+<button type="button" onclick="myFunction()">点击改变文本</button>
+</div>
+
+<div>
+<script type="text/javascript">
+function changeImage(){
+	element=document.getElementById('myimage');
+	if(element.src.match('bulbon'))
+	{
+		element.src="/static/image/pic_bulboff.gif";
+	}else
+	{
+		element.src="/static/image/pic_bulbon.gif";
+	}
+}
+</script>
+<img id="myimage" onclick="changeImage()" src="/static/image/pic_bulboff.gif" />
+</div>
+<div>
+<h1 onclick="cssFunction()" id="wenzi">我要改变文字</h1>
+<script type="text/javascript">
+function cssFunction(){
+	x=document.getElementById('wenzi');
+	if(x.style.color.match('f00'))
+	{
+		x.style.color="#000"
+	}else{
+		x.style.color="#f00";
+	}
+	
+}
+</script>
+<button type="button" onclick="cssFunction()">点击改变</button>
+</div>
+<div>
+<input type="text" name="" id="gett">
+<script type="text/javascript">
+function getFunction(){
+	var x=document.getElementById('gett').value;
+	if(x==""||isNaN(x))
+	{
+		alert("不是数字");
+	}
+}
+</script>
+<button type="button" onclick="getFunction()">点击提交</button>
+</div>
+<script>
+document.getElementById('myimage').innerHTML=Date();
+document.write(Date());
+</script>
+<script>
+a=5;
+b=6;
+c=a+b;
+console.log(c);
+// window.alert(c);
+</script>
+
+
+<p id="p1"></p>
+<p id="p2"></p>
+<p id="p3"></p>
+<p id="p4"></p>
+<p id="p5"></p>
+<p id="p6"></p>
+<p id="p7"></p>
+<p id="p8"></p>
+<script>
+document.getElementById('p1').innerHTML=123e5; //123后面跟5个零
+document.getElementById('p2').innerHTML= 5*10;
+document.getElementById('p3').innerHTML=[10,20,30,40]
+var length=6;
+document.getElementById('p4').innerHTML= length;
+var a,b,c,z;
+a=1;
+b=2;
+c=3;
+z=(a+b)*c;
+document.getElementById('p5').innerHTML=z;
+var dd=3.14;
+var ee='1'; //定义变量如果加引号会被当成文本来处理
+var ff=dd+ee;
+document.getElementById('p6').innerHTML=ff;
+var lastname="dep00",age=30,job="html";
+document.getElementById('p7').innerHTML=lastname;
+var anme="It\'s alright";
+var anme="he id called \"Johnny\"";
+document.getElementById('p8').innerHTML=anme;
+</script>
+
+
+
+
+<p id="di1">我是第一段</p>
+<p id="di2">我是第一段</p>
+<p>假设 y=5，计算 x=y+2，并显示结果。</p>
+<p id="di3"></p>
+<button type="button" onclick="diFunction()">点击</button>
+<script>
+function diFunction(){
+	document.getElementById('di1').innerHTML="你好世界";
+	document.getElementById('di2').innerHTML="你最近怎么样?";
+	var y=5;
+	var x=y+2;
+	var demop=document.getElementById('di3');
+	demop.innerHTML="x="+x;
+	//document.write("你好 \ 世界")
+	//document.write \("你好世界！");
+}
+</script>
+
+<script>
+var i;
+var cars=new Array();
+cars[0]='Saab';
+cars[1]='VOlvo';
+cars[2]='BMw';
+// var cars=new Array("Saab","Volvo","BMW");
+for(i=0;i<cars.length;i++)
+{
+	document.write(cars[i] + "<br>");
+}
+
+//对象
+var person={firstname:'john',lastname:'demo',id:5566};
+document.write(person.lastname + "<br>");
+document.write(person['lastname']+ "<br>");
+// 最常用的对象创建方式:
+// function Demo(){
+//     var obj=new Object();
+//     obj.name="张思";
+//     obj.age=12;
+//     obj.firstF=function(){
+//     }
+//     obj.secondF=function(){
+//     }
+//     return obj;
+// }
+
+// var one=Demo();
+// // 调用输出
+// document.write(one.age);
+// 第二种：
+
+// function Demo(){
+//     this.name="张思";
+//     this.age=12;
+//     this.firstF=function(){
+//     }
+//     this.secondF=function(){
+//     }
+// }
+
+// var one=new Demo
+
+// // 调用输出
+// document.write(one.age);
+</script>
+<button onclick="djFunction('Harry Potter','Wizard')">点击</button>
+<button onclick="djFunction('你好','啊')">点击</button>
+
+<script>
+function djFunction(name,job){
+	alert("Welcome"+name+",the"+job);
+}
+</script>
+<p id="demos"></p>
+<p id="demoss"></p>
+<script>
+function mysfunction(a,b){
+	return a*b;
+}
+document.getElementById('demos').innerHTML=mysfunction(4,3);
+function myssFunction(a,b){
+	if(a>b)
+	{
+		return a+b;
+	}
+}
+document.getElementById('demoss').innerHTML=myssFunction(7,6);
+</script>
+
+<p>简单计算器:</p>
+<table border="1" style="position:center;">
+  <tr>
+    <td>第一个数：</td>
+    <td><input type="text" id="first"/></td>
+  </tr>
+  <tr>
+    <td>第二个数：</td>
+    <td><input type="text" id="twice"/></td>
+  </tr>
+  <tr>
+    <td colspan="2" >
+      &nbsp;
+      <button style="width:inherit" onclick="add()">+</button>
+      &nbsp;
+      <button style="width:inherit" onclick="subtract()">-</button>
+      &nbsp;
+      <button style="width:inherit" onclick="ride()">*</button>
+      &nbsp;
+      <button style="width:inherit" onclick="devide()">/</button>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" rowspan="2">
+      <p id="result"></p>
+    </td>
+  </tr>
+</table>
+<script>
+//获取第一个数
+function getFirstNumber(){
+	var firstNumber=document.getElementById('first').value;
+	return firstNumber;
+}
+//获取第二个数
+function getSecond(){
+	var second=document.getElementById('twice').value;
+	return second;
+}
+var result_1;
+//加法
+	function add(){
+		var a=getFirstNumber();
+		var b=getSecond();
+		var re=Number(a)+Number(b);
+		sendResult(re);
+	}
+//减法
+function subtract(){
+	var a=getFirstNumber();
+	var b=getSecond();
+	var re=a-b;
+	sendResult(re);
+}
+//乘法
+function ride(){
+	var a=getFirstNumber();
+	var b=getSecond();
+	var re=a*b;
+	sendResult(re);
+}
+//除
+function devide(){
+	var a=getFirstNumber();
+	var b=getSecond();
+	var re=a/b;
+	sendResult(re);
+}
+//给p传值
+function sendResult(result_1){
+	var num=document.getElementById('result')
+	num.innerHTML=result_1;
+}
+</script>
+
+看书：<input type="checkbox" name="checkbox" value=1><br>
+写字：<input type="checkbox" name="checkbox"value=2><br>
+打飞机：<input type="checkbox" name="checkbox"value=3><br>
+玩游戏：<input type="checkbox" name="checkbox"value=4><br>
+<button onclick="checkboxed('checkbox')">全选</button>
+<button onclick="uncheckboxed('checkbox')">取消全选</button>
+<button onclick="allcheck()">全选/取消</button>
+<script>
+function checkboxed(objNmae){
+	var objnamelist=document.getElementsByName(objNmae);
+	if(null!=objnamelist){
+		alert('全选操作');
+		for(var i=0;i<objnamelist.length;i++){
+			objnamelist[i].checked="checked";
+		}
+	}
+}
+function uncheckboxed(objNmae){
+	var objnamelist=document.getElementsByName(objNmae);
+	if(null!=objnamelist)
+	{
+		alert('取消全选');
+		for(var i=0;i<objnamelist.length;i++){
+			objnamelist[i].checked="";
+		}
+	}
+}
+var checkAll=false;
+function allcheck(){
+	checkAll=!checkAll;
+	let inputs=document.getElementsByName('checkbox')
+	for(var i=0;i<inputs.length;i++)
+	{
+		inputs[i].checked=checkAll
+	}
+}
+</script>
+<div>11</div>
+<div style="display: none;">2222</div>
+</body>
+</html>
